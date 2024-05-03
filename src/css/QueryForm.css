@@ -1,0 +1,72 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2436bc;
+} */
+
+.container1 {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+#countryCode {
+    width: 30%;
+    height: 50px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+.required::after {
+    content: "*";
+    color: red;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease; 
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: #4CAF50; 
+}
+textarea {
+    height: 150px;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.container1:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);   
+}

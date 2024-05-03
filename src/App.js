@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './components/Homepage';
+import AboutUs from './components/AboutUs';
+import Pricing from './components/Pricing';
+import Feedback from './components/Feedback';
+import QueryForm from './components/QueryForm';
+import ProductReview from './components/ProductReview';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/pricing" element={<Pricing/>}/>
+        <Route path="/feedback" element={<Feedback/>}/>
+        <Route path="/feedback/queryform" element={<QueryForm/>}/>
+        <Route path="/feedback/productreview" element={<ProductReview/>}/>
+      </Routes>
+    </Router>
+    
+    </>
   );
 }
 
