@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import Feedback from './Feedback';
+import"../css/ProductReview.css";
 
 // Initial rating state
 const InitialRating = {
@@ -64,11 +66,12 @@ function ProductReview() {
   }
   return (
     <>
-      <header className='container'>
+    <div className='d-flex'>
+    <div><Feedback/></div>
+      <main className='container3'>
+      <header className='container3'>
         <h1>Product Review</h1>
       </header>
-
-      <main className='container'>
         <form className='form-control'>
           <div className='col'>
             <div className='input-control'>
@@ -197,6 +200,7 @@ function ProductReview() {
           </button>
         </form>
       </main>
+      </div>
     </>
   )
 }

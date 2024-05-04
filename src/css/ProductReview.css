@@ -1,0 +1,230 @@
+/* 
+  
+  body {
+    font-family: var(--ff-body);
+    font-size: calc(10px + 2vmin);
+    background-color: var(--clr-primary-300);
+    color: #212731;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Box sizing rules and Remove default margin*/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set core body defaults */
+  /* body {
+    min-height: 100%;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  } */
+   */
+  a {
+    text-decoration: none;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  .container3 {
+    width: calc(min(776px, 90%));
+    margin: 0 auto;
+  }
+  
+  button {
+    border-radius: 12px;
+    font-family: inherit;
+    outline: none;
+    border: none;
+    transition: all 0.3s linear;
+    cursor: pointer;
+  }
+  
+  /* form */
+  .container3 > h1 {
+    color: var(--clr-primary-400);
+    text-align: center;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+  }
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-primary-400);
+    box-shadow: var(--shadow-200);
+    padding: 5%;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+  }
+  
+  /* input  */
+  .input-control {
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: var(--clr-neutral-100);
+  }
+  
+  label {
+    font-size: var(--fs-400);
+    display: block;
+    margin-bottom: 5px;
+    color: var(--clr-neutral-400);
+  }
+  
+  .input-control input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #c1c5d0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: var(--fs-400);
+  }
+  
+  .input-control input:focus {
+    outline-color: var(--clr-primary-300);
+  }
+  
+  /* Responsive Styling */
+  @media only screen and (min-width: 600px) {
+    .input-control {
+      display: inline-block;
+      width: 45%;
+      margin-right: 5%;
+      margin-bottom: 20px;
+    }
+    /* .col {
+      display: flex;
+      gap: 1.5rem;
+      width: 100%;
+    }
+  
+    .col .input-control {
+      width: 100%;
+      margin-right: 0;
+    } */
+  
+    .form-control {
+      padding: 10%;
+    }
+  }
+  
+  @media only screen and (max-width: 599px) {
+    .input-control {
+      width: 100%;
+    }
+  }
+  
+  /* Number rating */
+  .stars-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .stars-container > span {
+    font-size: 3rem;
+    cursor: pointer;
+    width: calc(min(3.5rem, 90%));
+  }
+  .rating-group {
+    margin: 1rem 0;
+  }
+  p {
+    font-size: var(--fs-400);
+    margin: 0.8rem 0;
+  }
+  .rating,
+  .rating-star {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    overflow: hidden;
+    flex-wrap: wrap;
+    height: calc(min(400px, 90%));
+    position: relative;
+    gap: 1rem;
+  }
+  
+  @media only screen and (max-width: 599px) {
+    .rating-star,
+    .rating {
+      justify-content: center;
+    }
+  }
+  
+  .rating span {
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  .rating > span {
+    border: 1px solid var(--clr-neutral-300);
+    background-color: var(--clr-primary-400);
+  }
+  
+  .rating > span:hover {
+    border: 1px solid var(--clr-primary-300);
+    color: var(--clr-primary-300);
+    background-color: #7b41b330;
+  }
+  
+  /* radio input */
+  
+  .radio-group p {
+    font-size: var(--fs-400);
+    margin: 1rem 0 1rem 0;
+  }
+  .radio-control {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  input[type='radio'] {
+    width: 24px;
+    cursor: pointer;
+    height: 24px;
+  }
+  
+  /* texarea */
+  .radio-group > label {
+    margin-top: 1rem;
+  }
+  .radio-group {
+    margin-top: 1rem;
+  }
+  .feedback {
+    width: 100%;
+    border: var(--border);
+    border-color: var(--clr-neutral-300);
+    border-radius: var(--radius);
+    margin: 1rem 0;
+    font-size: 16px;
+    font-family: inherit;
+    padding: 0.5rem;
+    min-height: 200px;
+  }
+  .feedback:focus {
+    outline-color: var(--clr-primary-300);
+  }
+  
+  /* submit button */
+  .submitBtn {
+    width: fit-content;
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-100);
+    margin: 1rem auto;
+    padding: 1rem 4rem;
+    border-radius: 4px;
+    background-color: var(--clr-primary-100);
+  }
+  

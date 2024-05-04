@@ -1,0 +1,57 @@
+.container2 {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input[type="text"],
+  .input-group input[type="email"],
+  .input-group input[type="tel"],
+  .input-group textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .input-group textarea {
+    resize: vertical;
+  }
+  
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rating input[type="radio"] {
+    display: none;
+  }
+  
+  .rating label {
+    font-size: 50px; /* Increased font size for stars */
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .rating label::before {
+    content: "\2605";
+  }
+  
+  .rating input[type="radio"]:checked ~ label {
+    color: #ffcc00;
+  }
+  

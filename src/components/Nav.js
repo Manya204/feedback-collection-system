@@ -120,11 +120,10 @@ export default function Nav() {
                   </Link>
                 </li>
                 <li>
-                <button
-                type="button"
+                  <Link to="/login"
                 class="btn btn-outline-secondary btn-lg px-4">
                 Login
-              </button>
+              </Link>
                 </li>
               </ul>
             </div>

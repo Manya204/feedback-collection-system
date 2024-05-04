@@ -7,6 +7,9 @@ import Pricing from './components/Pricing';
 import Feedback from './components/Feedback';
 import QueryForm from './components/QueryForm';
 import ProductReview from './components/ProductReview';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import StudentFeedback from './components/StudentFeedback';
 
 function App() {
   return (
@@ -18,8 +21,11 @@ function App() {
         <Route path="/about" element={<AboutUs/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/feedback" element={<Feedback/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<Signup/>}/>
         <Route path="/feedback/queryform" element={<QueryForm/>}/>
         <Route path="/feedback/productreview" element={<ProductReview/>}/>
+        <Route path="/feedback/studentfeedback" element={<StudentFeedback/>}/>
       </Routes>
     </Router>
     
