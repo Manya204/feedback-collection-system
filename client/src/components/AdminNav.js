@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import { Link } from "react-router-dom";
 
-export default function Feedback() {
+export default function AdminNav() {
   return (
     <>
-      <div
+  <div
         className="d-flex flex-column flex-shrink-0 bg-body-tertiary fixed-top"
         style={{width: "4.5rem"}}
       >
@@ -28,7 +28,7 @@ export default function Feedback() {
         </Link>
         <ul className="nav nav-pills nav-flush flex-column mb-auto text-center">
           <li className="nav-item">
-            <Link to="/feedback/home"
+            <Link to=""
               className="nav-link active py-3 border-bottom rounded-0"
               aria-current="page"
               data-bs-toggle="tooltip"
@@ -49,7 +49,7 @@ export default function Feedback() {
             </Link>
           </li>
           <li>
-            <Link to="/feedback/studentfeedback"
+            <Link to=""
               className="nav-link py-3 border-bottom rounded-0"
               data-bs-toggle="tooltip"
               data-bs-placement="right"
@@ -69,7 +69,7 @@ export default function Feedback() {
             </Link>
           </li>
           <li>
-            <Link to="/feedback/productreview"
+            <Link to=""
               className="nav-link py-3 border-bottom rounded-0"
               data-bs-toggle="tooltip"
               data-bs-placement="right"
@@ -89,7 +89,7 @@ export default function Feedback() {
             </Link>
           </li>
           <li>
-            <Link to="/feedback/trainingfeedback"
+            <Link to=""
               className="nav-link py-3 border-bottom rounded-0"
               data-bs-toggle="tooltip"
               data-bs-placement="right"
@@ -109,7 +109,7 @@ export default function Feedback() {
             </Link>
           </li>
           <li>
-            <Link to="/feedback/queryform"
+            <Link to=""
               className="nav-link py-3 border-bottom rounded-0"
               data-bs-toggle="tooltip"
               data-bs-placement="right"
@@ -155,5 +155,5 @@ export default function Feedback() {
         </div>
       </div>
     </>
-  );
+  )
 }

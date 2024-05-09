@@ -45,7 +45,7 @@ const Login = () => {
   };
 
   return (
-    <div style={{ margin: 0, padding: 0, boxSizing: 'border-box', fontFamily: 'poppins, sans-serif', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#23242a' }}>
+    <div style={{ margin: 0, padding: 0, boxSizing: 'border-box', fontFamily: 'poppins, sans-serif', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: 'whitesmoke' }}>
       <div className="box">
         <span className="borderLine"></span>
         <form onSubmit={handleSubmit}>

@@ -47,7 +47,7 @@ export default function Nav() {
                   </Link>
                 </li>
                 <li>
-                <Link to="" className="nav-link text-white">
+                <Link to="/admin/login" className="nav-link text-white">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"

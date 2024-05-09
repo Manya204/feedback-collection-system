@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "../css/Login.css";
 
-const Signup = () => {
+const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password || !confirmPassword) {
+    if (!email || !password) {
       setError('All fields are required');
       return;
     }
@@ -19,30 +18,13 @@ const Signup = () => {
       setError('Invalid email address');
       return;
     }
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
-    setError('');
-    try {
-      const response = await fetch('http://localhost:5000/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      });
-
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.message);
+    if (email === 'adminuser@gmail.com' && password === 'root') {
+        // Navigate to admin home page
+        navigate('/admin/home');
+      } else {
+        setError('Invalid email or password');
       }
-
-      navigate("/login");
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  }
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -54,7 +36,7 @@ const Signup = () => {
       <div className="box">
         <span className="borderLine"></span>
         <form onSubmit={handleSubmit}>
-          <h2>Sign up</h2>
+          <h2>Sign in</h2>
           <div className="inputBox">
             <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)} />
             <span>Email</span>
@@ -62,23 +44,15 @@ const Signup = () => {
           </div>
           <div className="inputBox">
             <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-            <span>Password</span>
+            <span>Password</span><br/><br/>
             <i></i>
           </div>
-          <div className="inputBox">
-            <input type="password" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-            <span>Confirm Password</span>
-            <i></i>
-          </div>
-        <div className="links">
-          <Link to="/login">Already have an account? Login</Link>
-        </div>
-        {error && <div style={{ color: 'red' }}>{error}</div>}
-          <input type="submit" value="Signup" />
-          </form>
+          {error && <div style={{ color: 'red' }}>{error}</div>}
+          <input type="submit" value="Login" />
+        </form>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default AdminLogin;

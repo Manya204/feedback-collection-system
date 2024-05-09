@@ -31,10 +31,12 @@ label {
     content: "*";
     color: red;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="tel"], 
-textarea {
+textarea 
+{
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;

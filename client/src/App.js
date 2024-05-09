@@ -11,6 +11,10 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import StudentFeedback from './components/StudentFeedback';
 import FeedbackHome from './components/FeedbackHome';
+import AdminLogin from './components/AdminLogin';
+import AdminHome from './components/AdminHome';
+import ShowQuery from './components/ShowQuery';
+import TrainingFeedback from './components/TrainingFeedback';
 
 function App() {
   return (
@@ -21,13 +25,16 @@ function App() {
         <Route path="/" element={<Homepage/>}/>
         <Route path="/about" element={<AboutUs/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
-        {/* <Route path="/feedback" element={<Feedback/>}/> */}
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/feedback/home" element={<FeedbackHome/>}/>
         <Route path="/feedback/queryform" element={<QueryForm/>}/>
         <Route path="/feedback/productreview" element={<ProductReview/>}/>
         <Route path="/feedback/studentfeedback" element={<StudentFeedback/>}/>
+        <Route path="/feedback/trainingfeedback" element={<TrainingFeedback/>}/>
+        <Route path="/admin/login" element={<AdminLogin/>}/>
+        <Route path="/admin/home" element={<AdminHome/>}/>
+        <Route path="/admin/queryform" element={<ShowQuery/>}/>
       </Routes>
     </Router>
     
