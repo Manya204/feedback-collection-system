@@ -1,203 +1,129 @@
 import React, { useState } from 'react';
 import Feedback from './Feedback';
-import '../css/TrainingFeedback.css'; 
+import '../css/TrainingFeedback.css';
+import { useNavigate } from 'react-router-dom';
 
 function TrainingFeedback() {
-  const [feedback, setFeedback] = useState({
-    firstName: '',
-    lastName: '',
-    date: '',
-    trainingRating: '',
-    enjoyedMost: '',
-    keyLearnings: '',
-    confusingSubject: '',
-    valuableLearning: '',
-    trainerRating: '',
-    overallRating: '',
-    additionalComments: ''
-  });
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [enjoyedMost, setEnjoyedMost] = useState('');
+  const [keyLearnings, setKeyLearnings] = useState('');
+  const [confusingSubject, setConfusingSubject] = useState('');
+  const [trainerRating, setTrainerRating] = useState('');
+  const [overallRating, setOverallRating] = useState('');
+  const [additionalComments, setAdditionalComments] = useState('');
+  const navigate=useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFeedback(prevFeedback => ({
-      ...prevFeedback,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(feedback);
-    setFeedback({
-      firstName: '',
-      lastName: '',
-      date: '',
-      trainingRating: '',
-      enjoyedMost: '',
-      keyLearnings: '',
-      confusingSubject: '',
-      valuableLearning: '',
-      trainerRating: '',
-      overallRating: '',
-      additionalComments: ''
-    });
+
+    try{
+    const response=await fetch('http://localhost:5000/feedback/trainingfeedback',{
+        method:"POST",
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify({firstName,lastName,email,phoneNumber,enjoyedMost,keyLearnings,confusingSubject,trainerRating,overallRating,additionalComments})
+      }
+      )
+      if(!response.ok)
+        {
+          throw new Error('Could not process your request');
+        }
+        navigate("/feedback/home")
+    }
+    catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
     <div className='d-flex'>
-    <div><Feedback/></div>
-    <div className="feedback-container">
-      <h1>Training Feedback</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="question">
-          <label>
-            First Name<span className="required">*</span>:
-            <input 
-              type="text" 
-              name="firstName" 
-              value={feedback.firstName} 
-              onChange={handleChange} 
-              required 
-            />
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            Last Name<span className="required">*</span>:
-            <input 
-              type="text" 
-              name="lastName" 
-              value={feedback.lastName} 
-              onChange={handleChange} 
-              required 
-            />
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            Date (MM-DD-YYYY)<span className="required">*</span>:
-            <input 
-              type="text" 
-              name="date" 
-              value={feedback.date} 
-              onChange={handleChange} 
-              placeholder="MM-DD-YYYY"
-              required 
-            />
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            Please rate training content<span className="required">*</span>:
-            <select 
-              name="trainingRating" 
-              value={feedback.trainingRating} 
-              onChange={handleChange} 
-              required
-            >
-              <option value="">Select</option>
-              <option value="1">1 - Worst</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5 - Best</option>
-            </select>
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            What did you enjoy most about the training?<span className="required">*</span>:
-            <textarea 
-              name="enjoyedMost" 
-              value={feedback.enjoyedMost} 
-              onChange={handleChange} 
-              required
-            />
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            Please list 2-3 key learnings from today's curriculum, and how you anticipate applying them to your work in the future.<span className="required">*</span>:
-            <textarea 
-              name="keyLearnings" 
-              value={feedback.keyLearnings} 
-              onChange={handleChange} 
-              required
-            />
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            Was there any subject matter that you found confusing? If so, please provide specific examples.
-            <textarea 
-              name="confusingSubject" 
-              value={feedback.confusingSubject} 
-              onChange={handleChange} 
-            />
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            What is the most valuable thing you learned today (knowledge or skills)?<span className="required">*</span>:
-            <textarea 
-              name="valuableLearning" 
-              value={feedback.valuableLearning} 
-              onChange={handleChange} 
-              required
-            />
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            Please rate your trainer<span className="required">*</span>:
-            <select 
-              name="trainerRating" 
-              value={feedback.trainerRating} 
-              onChange={handleChange} 
-              required
-            >
-              <option value="">Select</option>
-              <option value="1">1 - Worst</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5 - Best</option>
-            </select>
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            Please rate the overall training<span className="required">*</span>:
-            <select 
-              name="overallRating" 
-              value={feedback.overallRating} 
-              onChange={handleChange} 
-              required
-            >
-              <option value="">Select</option>
-              <option value="1">1 - Worst</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5 - Best</option>
-            </select>
-          </label>
-        </div>
-        <div className="question">
-          <label>
-            Any additional comments you wish to share?
-            <textarea 
-              name="additionalComments" 
-              value={feedback.additionalComments} 
-              onChange={handleChange} 
-            />
-          </label>
-        </div>
-        <div className="button-container">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+      <div><Feedback/></div>
+      <div className="feedback-container">
+        <h1>Training Feedback</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="question">
+            <label>
+              First Name<span className="required">*</span>:
+              <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              Last Name<span className="required">*</span>:
+              <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              Email<span className="required">*</span>:
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              Phone Number<span className="required">*</span>:
+              <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              What did you enjoy most about the training?<span className="required">*</span>:
+              <textarea value={enjoyedMost} onChange={(e) => setEnjoyedMost(e.target.value)} required></textarea>
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              Please list 2-3 key learnings from today's curriculum, and how you anticipate applying them to your work in the future.<span className="required">*</span>:
+              <textarea value={keyLearnings} onChange={(e) => setKeyLearnings(e.target.value)} required></textarea>
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              Was there any subject matter that you found confusing? If so, please provide specific examples.
+              <textarea value={confusingSubject} onChange={(e) => setConfusingSubject(e.target.value)}></textarea>
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              Please rate your trainer<span className="required">*</span>:
+              <select value={trainerRating} onChange={(e) => setTrainerRating(e.target.value)} required>
+                <option value="">Select</option>
+                <option value="1">1 - Worst</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 - Best</option>
+              </select>
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              Please rate the overall training<span className="required">*</span>:
+              <select value={overallRating} onChange={(e) => setOverallRating(e.target.value)} required>
+                <option value="">Select</option>
+                <option value="1">1 - Worst</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 - Best</option>
+              </select>
+            </label>
+          </div>
+          <div className="question">
+            <label>
+              Any additional comments you wish to share?
+              <textarea value={additionalComments} onChange={(e) => setAdditionalComments(e.target.value)}></textarea>
+            </label>
+          </div>
+          <div className="button-container">
+            <button type="submit" className="btn btn-success w-100">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

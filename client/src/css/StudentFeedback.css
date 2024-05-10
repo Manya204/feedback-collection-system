@@ -54,4 +54,15 @@
   .rating input[type="radio"]:checked ~ label {
     color: #ffcc00;
   }
+  .form-check {
+    display: flex;
+    align-items: center;
+  }
   
+  .form-check-input {
+    margin-right: 5px;
+  }
+  
+  .form-check-label {
+    margin-left: 5px;
+  }
