@@ -55,9 +55,9 @@ export default function Feedback() {
           </a>
           <ul className="dropdown-menu text-small shadow">
             <li>
-              <a className="dropdown-item" href="#">
+              <Link to="/" className="dropdown-item" href="#">
                 Sign out
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
