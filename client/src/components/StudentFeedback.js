@@ -7,16 +7,16 @@ const StudentFeedback = () => {
     <div className='d-flex'>
     <div><Feedback/></div>
       <div className="container2">
-        <h2 className="text-center" style={{ color: 'black', padding: '15px' }}>Student feedBack Form </h2>
+        <h2 className="text-center" style={{ color: 'black', padding: '15px' }}>Student FeedBack Form </h2>
         <form id="feedbackForm" style={{ backgroundColor: '#fff', padding: '50px' }}>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-8">
               <div className="input-group">
                 <label htmlFor="firstName">First Name:</label>
                 <input type="text" id="firstName" name="firstName" className="form-control" required />
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-8">
               <div className="input-group">
                 <label htmlFor="lastName">Last Name:</label>
                 <input type="text" id="lastName" name="lastName" className="form-control" required />
@@ -24,13 +24,13 @@ const StudentFeedback = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-8">
               <div className="input-group">
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" className="form-control" required />
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-8">
               <div className="input-group">
                 <label htmlFor="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" className="form-control" required />
@@ -39,7 +39,7 @@ const StudentFeedback = () => {
           </div>
 
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-8">
               <div className="input-group">
                 <label htmlFor="quality">1) Review us:</label>
                 <div className="rating">
@@ -51,27 +51,29 @@ const StudentFeedback = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-8">
 
             </div>
           </div>
 
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-8">
               <div className="input-group">
-                <label htmlFor="recommendation">Would you recommend to your friends?</label>
-                <div>
-                  <input type="radio" id="ofCourse" name="recommendation" value="Of Course!" />
-                  <label htmlFor="ofCourse">Of Course!</label>
-                </div>
-                <div>
-                  <input type="radio" id="never" name="recommendation" value="Never!" />
-                  <label htmlFor="never">Never</label>
-                </div>
-                <div>
-                  <input type="radio" id="maybe" name="recommendation" value="Maybe" />
-                  <label htmlFor="maybe">Maybe</label>
-                </div>
+              <br></br> 
+               <label htmlFor="recommendation">Would you recommend to your friends?</label>
+
+                <label><br></br>
+                    <input type="radio" name="recommendation" value= "Of Course!" /> Of Course!
+                </label>
+
+                <label><br></br>
+                    <input type="radio" name="recommendation" value= "Never!" /> Never
+                </label>
+
+                <label><br></br>
+                    <input type="radio" name="recommendation" value= "Maybe" /> Maybe
+                </label>
+
               </div>
             </div>
           </div>

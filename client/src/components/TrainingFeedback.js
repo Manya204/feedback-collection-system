@@ -46,8 +46,8 @@ function TrainingFeedback() {
   return (
     <div className='d-flex'>
     <div><Feedback/></div>
-    <div className="feedback-container">
-      <h1>Training Feedback</h1>
+    <div className="container2">
+    <h2 className="text-center" style={{ color: 'black', padding: '15px' }}> Training Feedback</h2>
       <form onSubmit={handleSubmit}>
         <div className="question">
           <label>
@@ -193,9 +193,11 @@ function TrainingFeedback() {
             />
           </label>
         </div>
-        <div className="button-container">
-          <button type="submit">Submit</button>
-        </div>
+        <div className="row">
+            <div className="col-md-12">
+              <button type="submit" className="btn btn-primary">Submit</button>
+            </div>
+          </div>
       </form>
     </div>
     </div>

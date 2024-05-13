@@ -70,7 +70,7 @@ function ProductReview() {
     <div><Feedback/></div>
       <main className='container3'>
       <header className='container3'>
-        <h1>Product Review</h1>
+      <h2 className="text-center" style={{ color: 'black', padding: '15px' }}> Product Review Form </h2>
       </header>
         <form className='form-control'>
           <div className='col'>
@@ -195,9 +195,11 @@ function ProductReview() {
             ></textarea>
           </div>
 
-          <button type='submit' className='submitBtn'>
-            Submit
-          </button>
+          <div className="row">
+            <div className="col-md-12">
+              <button type="submit" className="btn btn-primary">Submit</button>
+            </div>
+          </div>
         </form>
       </main>
       </div>
