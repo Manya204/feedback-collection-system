@@ -15,6 +15,10 @@ import AdminLogin from './components/AdminLogin';
 import AdminHome from './components/AdminHome';
 import ShowQuery from './components/ShowQuery';
 import TrainingFeedback from './components/TrainingFeedback';
+import ShowProduct from './components/ShowProduct';
+import ShowStudent from './components/ShowStudent';
+import ShowTraining from './components/ShowTraining';
+import LoginHome from './components/LoginHome';
 
 function App() {
   return (
@@ -23,6 +27,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Homepage/>}/>
+        <Route path="/loggedin/home" element={<LoginHome/>}/>
         <Route path="/about" element={<AboutUs/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/login" element={<Login/>}/>
@@ -35,6 +40,9 @@ function App() {
         <Route path="/admin/login" element={<AdminLogin/>}/>
         <Route path="/admin/home" element={<AdminHome/>}/>
         <Route path="/admin/queryform" element={<ShowQuery/>}/>
+        <Route path="/admin/productreview" element={<ShowProduct/>}/>
+        <Route path="/admin/trainingfeedback" element={<ShowTraining/>}/>
+        <Route path="/admin/studentfeedback" element={<ShowStudent/>}/>
       </Routes>
     </Router>
     

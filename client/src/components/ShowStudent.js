@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function ShowQuery() {
-  const [queries, setQueries] = useState([]);
+function ShowStudent() {
+  const [students, setStudents] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/queryform")
+      .get("http://localhost:5000/admin/studentfeedback")
       .then((response) => {
-        setQueries(response.data);
+        setStudents(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching queries:", error);
+        console.error("Error fetching students:", error);
       });
   }, []);
 
-  // Function to export query data to CSV format
+  // Function to export student feedback data to CSV format
   const exportToCSV = () => {
     // Prepare CSV data
     const csvData = [
-      Object.keys(queries[0]).join(","),
-      ...queries.map((item) =>
-        Object.values(item)
+      Object.keys(students[0]).join(","),
+      ...students.map((student) =>
+        Object.values(student)
           .map((value) => (typeof value === "string" ? `"${value}"` : value))
           .join(",")
       ),
@@ -36,7 +36,7 @@ function ShowQuery() {
     // Create a temporary link element to trigger the download
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "query_data.csv");
+    link.setAttribute("download", "student_feedback.csv");
 
     // Simulate a click on the link to trigger the download
     document.body.appendChild(link);
@@ -51,13 +51,13 @@ function ShowQuery() {
     <>
       <div className="d-flex justify-content-center align-items-center">
         <h2 className="display-5 fw-bold pb-2 mt-5 border-bottom text-center col">
-          Query Form Results
+          Student Feedback Results
         </h2>
         <div className="ml-auto">
           {/* Button to trigger exportToCSV function */}
           <button
             type="button"
-            className="btn btn-primary "
+            className="btn btn-primary"
             style={{ height: "50px" }}
             onClick={exportToCSV}
           >
@@ -70,22 +70,26 @@ function ShowQuery() {
         <thead>
           <tr>
             <th>S.No</th>
-            <th>Name</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
             <th>Email</th>
-            <th>Country Code</th>
             <th>Phone Number</th>
-            <th>Query</th>
+            <th>Quality</th>
+            <th>Recommendation</th>
+            <th>Comment</th>
           </tr>
         </thead>
         <tbody>
-          {queries.map((query, index) => (
-            <tr key={query._id}>
+          {students.map((student, index) => (
+            <tr key={student._id}>
               <td>{index + 1}</td>
-              <td>{query.name}</td>
-              <td>{query.email}</td>
-              <td>{query.countryCode}</td>
-              <td>{query.phone}</td>
-              <td>{query.query}</td>
+              <td>{student.firstName}</td>
+              <td>{student.lastName}</td>
+              <td>{student.email}</td>
+              <td>{student.phone}</td>
+              <td>{student.quality}</td>
+              <td>{student.recommendation}</td>
+              <td>{student.comment}</td>
             </tr>
           ))}
         </tbody>
@@ -94,4 +98,4 @@ function ShowQuery() {
   );
 }
 
-export default ShowQuery;
+export default ShowStudent;

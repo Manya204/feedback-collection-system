@@ -32,7 +32,7 @@ const Login = () => {
         throw new Error('Login failed');
       }
       // setIsLoggedIn(true);
-      navigate("/");
+      navigate("/loggedin/home");
     } catch (error) {
       console.error('Error logging in:', error);
       setError('Invalid email or password');

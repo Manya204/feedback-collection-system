@@ -11,10 +11,10 @@ export default function Zidio_Description() {
   </div>
   <div className="carousel-inner" style={{width:'100%', height:'510px'}}>
     <div className="carousel-item active">
-      <img src="../assets/zidio.jpeg" className="d-block w-100" alt="..."/>
+      <img src="../assets/learning.jpg" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="../assets/learning.jpg" className="d-block w-100" alt="..."/>
+      <img src="../assets/training.png" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
       <img src="../assets/coding.jpg" className="d-block w-100" alt="..."/>

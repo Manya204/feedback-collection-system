@@ -256,6 +256,87 @@ app.post("/feedback/trainingfeedback", async (req, res) => {
   }
 });
 
+app.get('/admin/queryform', async (req, res) => {
+  try {
+    const queries = await Query.find({});
+    res.json(queries);
+  } catch (err) {
+    console.error('Error fetching queries:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/admin/trainingfeedback', async (req, res) => {
+  try {
+    const trainings = await Training.find({});
+    res.json(trainings);
+  } catch (err) {
+    console.error('Error fetching trainings:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/admin/productreview', async (req, res) => {
+  try {
+    const products = await Product.find({});
+    res.json(products);
+  } catch (err) {
+    console.error('Error fetching queries:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/admin/studentfeedback', async (req, res) => {
+  try {
+    const students = await Student.find({});
+    res.json(students);
+  } catch (err) {
+    console.error('Error fetching queries:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+app.get('/admin/queryform/count', async (req, res) => {
+  try {
+    const count = await Query.countDocuments({});
+    res.json({ count });
+  } catch (err) {
+    console.error('Error fetching count:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/admin/studentfeedback/count', async (req, res) => {
+  try {
+    const count = await Student.countDocuments({});
+    res.json({ count });
+  } catch (err) {
+    console.error('Error fetching count:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/admin/productreview/count', async (req, res) => {
+  try {
+    const count = await Product.countDocuments({});
+    res.json({ count });
+  } catch (err) {
+    console.error('Error fetching count:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/admin/trainingfeedback/count', async (req, res) => {
+  try {
+    const count = await Training.countDocuments({});
+    res.json({ count });
+  } catch (err) {
+    console.error('Error fetching count:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

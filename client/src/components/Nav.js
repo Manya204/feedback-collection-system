@@ -107,7 +107,7 @@ export default function Nav() {
                 </li>
 
                 <li>
-                <Link to="/feedback/home" className="nav-link text-white">
+                <Link to="/login" className="nav-link text-white">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"

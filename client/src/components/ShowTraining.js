@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function ShowQuery() {
-  const [queries, setQueries] = useState([]);
+function ShowTraining() {
+  const [trainingFeedback, setTrainingFeedback] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/queryform")
+      .get("http://localhost:5000/admin/trainingfeedback")
       .then((response) => {
-        setQueries(response.data);
+        setTrainingFeedback(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching queries:", error);
+        console.error("Error fetching training feedback:", error);
       });
   }, []);
 
-  // Function to export query data to CSV format
+  // Function to export training feedback data to CSV format
   const exportToCSV = () => {
     // Prepare CSV data
     const csvData = [
-      Object.keys(queries[0]).join(","),
-      ...queries.map((item) =>
-        Object.values(item)
+      Object.keys(trainingFeedback[0]).join(","),
+      ...trainingFeedback.map((training) =>
+        Object.values(training)
           .map((value) => (typeof value === "string" ? `"${value}"` : value))
           .join(",")
       ),
@@ -36,7 +36,7 @@ function ShowQuery() {
     // Create a temporary link element to trigger the download
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "query_data.csv");
+    link.setAttribute("download", "training_feedback.csv");
 
     // Simulate a click on the link to trigger the download
     document.body.appendChild(link);
@@ -51,13 +51,13 @@ function ShowQuery() {
     <>
       <div className="d-flex justify-content-center align-items-center">
         <h2 className="display-5 fw-bold pb-2 mt-5 border-bottom text-center col">
-          Query Form Results
+          Training Feedback Results
         </h2>
         <div className="ml-auto">
           {/* Button to trigger exportToCSV function */}
           <button
             type="button"
-            className="btn btn-primary "
+            className="btn btn-primary"
             style={{ height: "50px" }}
             onClick={exportToCSV}
           >
@@ -70,22 +70,32 @@ function ShowQuery() {
         <thead>
           <tr>
             <th>S.No</th>
-            <th>Name</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
             <th>Email</th>
-            <th>Country Code</th>
             <th>Phone Number</th>
-            <th>Query</th>
+            <th>Enjoyed Most</th>
+            <th>Key Learnings</th>
+            <th>Confusing Subject</th>
+            <th>Trainer Rating</th>
+            <th>Overall Rating</th>
+            <th>Comments</th>
           </tr>
         </thead>
         <tbody>
-          {queries.map((query, index) => (
-            <tr key={query._id}>
+          {trainingFeedback.map((training, index) => (
+            <tr key={training._id}>
               <td>{index + 1}</td>
-              <td>{query.name}</td>
-              <td>{query.email}</td>
-              <td>{query.countryCode}</td>
-              <td>{query.phone}</td>
-              <td>{query.query}</td>
+              <td>{training.firstName}</td>
+              <td>{training.lastName}</td>
+              <td>{training.email}</td>
+              <td>{training.phoneNumber}</td>
+              <td>{training.enjoyedMost}</td>
+              <td>{training.keyLearnings}</td>
+              <td>{training.confusingSubject}</td>
+              <td>{training.trainerRating}</td>
+              <td>{training.overallRating}</td>
+              <td>{training.additionalComments}</td>
             </tr>
           ))}
         </tbody>
@@ -94,4 +104,4 @@ function ShowQuery() {
   );
 }
 
-export default ShowQuery;
+export default ShowTraining;
