@@ -110,7 +110,7 @@ const StudentFeedback = () => {
             <div className="col">
               <label htmlFor="comment">Please tell us more about your experience:</label>
               <div className="form-group">
-                <textarea id="comment" name="comment" className="form-control" rows="4" cols="12" value={comment} onChange={(e) => setComment(e.target.value)} required></textarea>
+                <textarea id="comment" name="comment" className="" rows="6" cols="12" value={comment} onChange={(e) => setComment(e.target.value)} required></textarea>
               </div>
             </div>
           </div>

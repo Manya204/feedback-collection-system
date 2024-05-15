@@ -39,7 +39,7 @@ export default function QueryForm() {
     <div><Feedback/></div>
     
       <div className="container2">
-        <h1>Query Form</h1>
+      <h2 className="text-center" style={{ color: 'black', padding: '15px' }}>Query Form</h2>
         <form id="queryForm" onSubmit={handleSubmit}>
           <label className="required" htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" value={name} onChange={(e)=>setName(e.target.value)} required />
