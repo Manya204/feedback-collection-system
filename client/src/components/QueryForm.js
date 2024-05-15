@@ -38,7 +38,7 @@ export default function QueryForm() {
     <div className='d-flex'>
     <div><Feedback/></div>
     
-      <div className="container1">
+      <div className="container2">
         <h1>Query Form</h1>
         <form id="queryForm" onSubmit={handleSubmit}>
           <label className="required" htmlFor="name">Name:</label>
