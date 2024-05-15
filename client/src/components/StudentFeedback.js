@@ -39,7 +39,7 @@ const StudentFeedback = () => {
   return (
     <div className='d-flex'>
       <div><Feedback/></div>
-      <div className="container2">
+      <div className="container3">
         <h2 className="text-center" style={{ color: 'black', padding: '15px' }}>Student Feedback Form</h2>
         <form id="feedbackForm" style={{ backgroundColor: '#fff', padding: '50px' }} onSubmit={handleSubmit}>
           <div className="row">
@@ -110,7 +110,7 @@ const StudentFeedback = () => {
             <div className="col">
               <label htmlFor="comment">Please tell us more about your experience:</label>
               <div className="form-group">
-                <textarea id="comment" name="comment" className="" rows="6" cols="12" value={comment} onChange={(e) => setComment(e.target.value)} required></textarea>
+                <textarea id="comment" name="comment" className="" rows="6" cols="12" placeholder="Type here..." value={comment} onChange={(e) => setComment(e.target.value)} required></textarea>
               </div>
             </div>
           </div>

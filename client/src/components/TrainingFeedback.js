@@ -42,54 +42,54 @@ function TrainingFeedback() {
   return (
     <div className='d-flex'>
       <div><Feedback/></div>
-      <div className="feedback-container">
-        <h1>Training Feedback</h1>
-        <form onSubmit={handleSubmit}>
+      <div className="container3">
+      <h2 className="text-center" style={{ color: 'black', padding: '15px' }}>Training Feedback Form</h2>
+      <form id="feedbackForm" style={{ backgroundColor: '#fff', padding: '50px' }} onSubmit={handleSubmit}>
           <div className="question">
             <label>
-              First Name<span className="required">*</span>:
+              First Name :
               <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
             </label>
           </div>
           <div className="question">
             <label>
-              Last Name<span className="required">*</span>:
+              Last Name :
               <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
             </label>
           </div>
           <div className="question">
             <label>
-              Email<span className="required">*</span>:
+              Email :
               <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </label>
           </div>
           <div className="question">
             <label>
-              Phone Number<span className="required">*</span>:
+              Phone Number :
               <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
             </label>
           </div>
           <div className="question">
             <label>
-              What did you enjoy most about the training?<span className="required">*</span>:
-              <textarea value={enjoyedMost} onChange={(e) => setEnjoyedMost(e.target.value)} required></textarea>
+              What did you enjoy most about the training? :
+              <textarea placeholder="Type here..." value={enjoyedMost} onChange={(e) => setEnjoyedMost(e.target.value)} required></textarea>
             </label>
           </div>
           <div className="question">
             <label>
-              Please list 2-3 key learnings from today's curriculum, and how you anticipate applying them to your work in the future.<span className="required">*</span>:
-              <textarea value={keyLearnings} onChange={(e) => setKeyLearnings(e.target.value)} required></textarea>
+              Please list 2-3 key learnings from today's curriculum, and how you anticipate applying them to your work in the future. :
+              <textarea placeholder="Type here..." value={keyLearnings} onChange={(e) => setKeyLearnings(e.target.value)} required></textarea>
             </label>
           </div>
           <div className="question">
             <label>
               Was there any subject matter that you found confusing? If so, please provide specific examples.
-              <textarea value={confusingSubject} onChange={(e) => setConfusingSubject(e.target.value)}></textarea>
+              <textarea placeholder="Type here..."value={confusingSubject} onChange={(e) => setConfusingSubject(e.target.value)}></textarea>
             </label>
           </div>
           <div className="question">
             <label>
-              Please rate your trainer<span className="required">*</span>:
+              Please rate your trainer :
               <select value={trainerRating} onChange={(e) => setTrainerRating(e.target.value)} required>
                 <option value="">Select</option>
                 <option value="1">1 - Worst</option>
@@ -102,7 +102,7 @@ function TrainingFeedback() {
           </div>
           <div className="question">
             <label>
-              Please rate the overall training<span className="required">*</span>:
+              Please rate the overall training :
               <select value={overallRating} onChange={(e) => setOverallRating(e.target.value)} required>
                 <option value="">Select</option>
                 <option value="1">1 - Worst</option>
@@ -116,7 +116,7 @@ function TrainingFeedback() {
           <div className="question">
             <label>
               Any additional comments you wish to share?
-              <textarea value={additionalComments} onChange={(e) => setAdditionalComments(e.target.value)}></textarea>
+              <textarea placeholder="Type here..." value={additionalComments} onChange={(e) => setAdditionalComments(e.target.value)}></textarea>
             </label>
           </div>
           <div className="button-container">

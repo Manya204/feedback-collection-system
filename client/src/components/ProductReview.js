@@ -49,11 +49,9 @@ const ProductReview = () => {
         <div>
           <Feedback />
         </div>
-        <main className="container3">
-          <header className="container3">
-            <h1>Product Review</h1>
-          </header>
-          <form className="form-control" onSubmit={handleSubmit}>
+        <div className="container3">
+          <h2 className="text-center" style={{ color: 'black', padding: '15px' }}>Product Review Form</h2>
+          <form id="feedbackForm" style={{ backgroundColor: '#fff', padding: '50px' }} onSubmit={handleSubmit}>
             <div className="col">
               <div className="input-control">
                 <label htmlFor="fname">First Name</label>
@@ -254,11 +252,13 @@ const ProductReview = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="btn btn-success">
-              Submit
-            </button>
+            <div className="row">
+            <div className="col-md-12">
+              <button type="submit" className="btn btn-success w-100">Submit</button>
+            </div>
+            </div>
           </form>
-        </main>
+        </div>
       </div>
     </>
   );
